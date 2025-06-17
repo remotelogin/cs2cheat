@@ -289,7 +289,7 @@ int main(int argc, char *argv[]) {
   std::thread draw_thread(draw, game_pid, back_buffer, draw_display, window);
   pthread_setname_np(draw_thread.native_handle(), "draw_thread");
 
-  std::thread move_thread(create_move, game_pid, move_display);
+  std::thread move_thread(create_move, game_pid, move_display, client_address);
   pthread_setname_np(move_thread.native_handle(), "move_thread");
 
   //main_thead's loop
